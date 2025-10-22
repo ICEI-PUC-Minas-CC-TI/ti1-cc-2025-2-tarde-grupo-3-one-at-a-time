@@ -1,5 +1,5 @@
 {
-  "usuarios": [
+      "usuarios": [
     {
       "id": 1,
       "login": "admin",
@@ -15,11 +15,96 @@
       "email": "user@abc.com"
     },
     {
+      "id": 3,
       "login": "rommel",
       "senha": "123",
       "nome": "Rommel",
       "email": "rommel@gmail.com",
-      "id": 3
     }
-  ]
-}
+  ],
+    "tarefas": [
+      {
+        "id": 1,
+        "usuarioID": 2,
+        "nome": "tarefa 1",
+        "descricao": "essa é a primeira tarefa do usuario 2",
+        "prioridade":"ALTA",
+        "vencimento":"28/11/2025",
+        "feito":true
+      },
+      {
+        "id": 2,
+        "usuarioID": 3,
+        "nome": "tarefa 2",
+        "descricao": "essa é a primeira tarefa do usuario 3",
+        "prioridade":"MEDIA",
+        "vencimento":"30/11/2025",
+        "feito":true
+      },
+      {
+        "id": 2,
+        "usuarioID": 2,
+        "nome": "tarefa 3",
+        "descricao": "essa é a segunda tarefa do usuario 2",
+        "prioridade":"BAIXA",
+        "vencimento":"05/11/2025",
+        "feito":true
+      },
+    ],
+    "eventos": [
+      {
+        "id": 1,
+        "usuarioID": 2,
+        "nome": "evento 1",
+        "descricao": "essa é o primeiro evento do usuario 2",
+        "tipo":"prova",
+        "data":"18/11/2025"
+      },
+      {
+        "id": 2,
+        "usuarioID": 3,
+        "nome": "evento 2",
+        "descricao": "essa é o primeiro evento do usuario 3",
+        "tipo":"viagem",
+        "data":"01/01/2026"
+      },
+      {
+        "id": 3,
+        "usuarioID": 2,
+        "nome": "evento 3",
+        "descricao": "essa é o segundo evento do usuario 2",
+        "tipo":"congresso",
+        "data":"30/10/2025"
+      }
+    ],
+    "timer": [
+      {
+        "id": 1,
+        "usuarioID": 2,
+        "nome": "timer 1",
+        "tipo": "estudo",
+        "duracao":15,
+        "intervalo": 5,
+        "repeticao": 3
+      },
+        {
+          "id": 2,
+          "usuarioID": 3,
+          "nome": "timer 2",
+          "tipo": "estudo",
+          "duracao":30,
+          "intervalo": 15,
+          "repeticao": 5
+        },
+          {
+            "id": 3,
+            "usuarioID": 2,
+            "nome": "timer 3",
+            "tipo": "exercicio",
+            "duracao":15,
+            "intervalo": 10,
+            "repeticao": 3
+          }
+    ]
+  }
+
