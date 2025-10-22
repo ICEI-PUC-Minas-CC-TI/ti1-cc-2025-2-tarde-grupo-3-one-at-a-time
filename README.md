@@ -6,7 +6,7 @@ Escreva um ou dois parágrafo resumindo o objetivo do seu projeto.
 
 * Fernando Valle Gusmão
 * Lucas Santiago Pereira
-* Nome completo do aluno 3
+* João Ricardo de Oliveira Bellesia
 * Nome completo do aluno 4
 
 ## Professores responsáveis
