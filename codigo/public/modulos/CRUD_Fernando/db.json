@@ -1,0 +1,118 @@
+{
+  "usuarios": [
+    {
+      "id": "1",
+      "login": "admin",
+      "senha": "123",
+      "nome": "Administrador do Sistema",
+      "email": "admin@abc.com"
+    },
+    {
+      "id": "2",
+      "login": "user",
+      "senha": "123",
+      "nome": "Usuario Comum",
+      "email": "user@abc.com"
+    },
+    {
+      "id": "3",
+      "login": "rommel",
+      "senha": "123",
+      "nome": "Rommel",
+      "email": "rommel@gmail.com"
+    }
+  ],
+  "tarefas": [
+    {
+      "id": "1",
+      "usuarioID": 2,
+      "nome": "tarefa 1",
+      "descricao": "essa é a primeira tarefa do usuario 2",
+      "prioridade": "ALTA",
+      "vencimento": "28/11/2025",
+      "feito": true
+    },
+    {
+      "id": "2",
+      "usuarioID": 3,
+      "nome": "tarefa 2",
+      "descricao": "essa é a primeira tarefa do usuario 3",
+      "prioridade": "MEDIA",
+      "vencimento": "30/11/2025",
+      "feito": true
+    },
+    {
+      "id": "3",
+      "usuarioID": 2,
+      "nome": "tarefa 3",
+      "descricao": "essa é a segunda tarefa do usuario 2",
+      "prioridade": "BAIXA",
+      "vencimento": "05/11/2025",
+      "feito": true
+    },
+    {
+      "id": "4",
+      "usuarioID": 1,
+      "nome": "obrigado deus",
+      "descricao": "Descrição padrão",
+      "prioridade": "MEDIA",
+      "vencimento": "2025-12-20",
+      "feito": true
+    }
+  ],
+  "eventos": [
+    {
+      "id": "1",
+      "usuarioID": 2,
+      "nome": "evento 1",
+      "descricao": "essa é o primeiro evento do usuario 2",
+      "tipo": "prova",
+      "data": "2025-10-18"
+    },
+    {
+      "id": "2",
+      "usuarioID": 3,
+      "nome": "evento 2",
+      "descricao": "essa é o primeiro evento do usuario 3",
+      "tipo": "viagem",
+      "data": "2025-10-01"
+    },
+    {
+      "id": "3",
+      "usuarioID": 2,
+      "nome": "evento 3",
+      "descricao": "essa é o segundo evento do usuario 2",
+      "tipo": "congresso",
+      "data": "2025-10-30"
+    }
+  ],
+  "timer": [
+    {
+      "id": "1",
+      "usuarioID": 2,
+      "nome": "timer 1",
+      "tipo": "estudo",
+      "duracao": 15,
+      "intervalo": 5,
+      "repeticao": 3
+    },
+    {
+      "id": "2",
+      "usuarioID": 3,
+      "nome": "timer 2",
+      "tipo": "estudo",
+      "duracao": 30,
+      "intervalo": 15,
+      "repeticao": 5
+    },
+    {
+      "id": "3",
+      "usuarioID": 2,
+      "nome": "timer 3",
+      "tipo": "exercicio",
+      "duracao": 15,
+      "intervalo": 10,
+      "repeticao": 3
+    }
+  ]
+}
