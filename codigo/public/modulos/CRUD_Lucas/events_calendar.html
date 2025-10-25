@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="styles_events_calendar.css">
+    <title>Calendário de Eventos</title>
+</head>
+
+<body class="bg-light">
+
+    <header class="mb-5">
+        <nav class="navbar bg-dark">
+            <div class="container-fluid">
+                <span class="navbar-brand mb-1 h1 text-white">One At Time</span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container my-5">
+            <div class="row justify-content-center align-items-start g-4">
+                <div class="col-md-8">
+                    <div class="calendar bg-white rounded shadow p-4">
+                        <h4 class="text-center mb-3">Outubro 2025</h4>
+                        <table class="table table-bordered text-center mb-0">
+                            <thead class="table-secondary">
+                            <tr>
+                                <th>Dom</th><th>Seg</th><th>Ter</th><th>Qua</th><th>Qui</th><th>Sex</th><th>Sáb</th>
+                            </tr>
+                            </thead>
+                                <tbody>
+                                <tr><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+                                <tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr>
+                                <tr><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr>
+                                <tr><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td></tr>
+                                <tr><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td></td><td></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="event-form bg-white rounded shadow p-4">
+                        <h4 class="mb-4 text-center">Adicionar Evento</h4>
+                        <form>
+                            <div class="mb-3">
+                                <label for="eventName" class="form-label">Nome do Evento</label>
+                                <input type="text" class="form-control" id="eventName" placeholder="Digite o nome do evento">
+                            </div>
+                            <div class="mb-3">
+                                <label for="eventDate" class="form-label">Data</label>
+                                <input type="date" class="form-control" id="eventDate">
+                            </div>
+                            <button type="submit" class="btn btn-success w-100">Adicionar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-5 fixed-bottom">
+        <p class="mb-0">© 2025 One At Time. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="app_events_calendar.js"></script>
+
+</body>
+</html>

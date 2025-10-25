@@ -19,7 +19,7 @@
       "login": "rommel",
       "senha": "123",
       "nome": "Rommel",
-      "email": "rommel@gmail.com",
+      "email": "rommel@gmail.com"
     }
   ],
     "tarefas": [
@@ -49,7 +49,7 @@
         "prioridade":"BAIXA",
         "vencimento":"05/11/2025",
         "feito":true
-      },
+      }
     ],
     "eventos": [
       {
