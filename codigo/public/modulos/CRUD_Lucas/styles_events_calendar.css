@@ -6,6 +6,13 @@
 
 }
 
+/* Para manter um espaço considerável entre o footer e o container principal */
+.container {
+
+    margin-bottom: 10rem;
+    
+}
+
 /* Estilo do calendário */
 .calendar table {
 
