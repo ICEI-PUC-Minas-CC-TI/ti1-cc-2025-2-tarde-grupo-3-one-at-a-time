@@ -104,7 +104,61 @@
       "duracao": 15,
       "intervalo": 10,
       "repeticao": 3
+    },
+    {
+      "id": 4,
+      "mode": "pomodoro",
+      "duration": 25
+    },
+    {
+      "id": 5,
+      "mode": "shortBreak",
+      "duration": 5
+    },
+    {
+      "id": 6,
+      "mode": "longBreak",
+      "duration": 15
+    },
+    {
+      "id": 7,
+      "mode": "pomodoro",
+      "duration": 25
+    },
+    {
+      "id": 8,
+      "mode": "pomodoro",
+      "duration": 25
+    },
+    {
+      "id": 9,
+      "mode": "pomodoro",
+      "duration": 25
+    },
+    {
+      "id": 10,
+      "mode": "shortBreak",
+      "duration": 0
+    },
+    {
+      "id": 11,
+      "mode": "pomodoro",
+      "duration": 0
+    },
+    {
+      "id": 12,
+      "mode": "pomodoro",
+      "duration": 1
+    },
+    {
+      "id": 13,
+      "mode": "longBreak",
+      "duration": 20
+    },
+    {
+      "id": 14,
+      "mode": "shortBreak",
+      "duration": 10
     }
   ]
 }
-

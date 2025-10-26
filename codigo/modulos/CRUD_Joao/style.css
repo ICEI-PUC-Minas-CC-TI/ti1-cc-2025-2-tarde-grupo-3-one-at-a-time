@@ -19,10 +19,37 @@
     background-color: #e2e2e2 !important;
 }
 
-.timer {
+#timer {
     font-size: 100px;
     margin: 10px 0;
     color: #636363;
+}
+
+.timer,
+#timer {
+    font-size: 120px;
+    font-weight: bold;
+    margin: 20px 0;
+    text-align: center;
+    color: white;
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+.timer::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.timer::-webkit-inner-spin-button,
+.timer::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.timer {
+    -moz-appearance: textfield;
 }
 
 .rest {
@@ -49,17 +76,44 @@
     font-size: large;
 }
 
-.cardbtn {
-    margin: 5px;
+.pombutt input[type="checkbox"] {
+    display: none;
+}
+
+.pombutt input[type="radio"] {
+    display: none;
+}
+
+.pombutt span {
+    display: inline-block;
     padding: 5px 10px;
     font-size: 12px;
+    margin: 5px;
+    background-color: #bababa;
     border: none;
     border-radius: 25px;
     cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.pombutt span:hover {
+    background-color: #c9c9c9;
+    border-color: #999;
+}
+
+.pombutt input[type="radio"]:checked + span {
+    background-color: #000000;
+    color: white;
+    border-color: #000000;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 10px;
 }
 
 .beginbtn {
-    margin-top: 10px;
     padding: 15px 20px;
     font-size: 16px;
     border: none;
@@ -67,7 +121,38 @@
     cursor: pointer;
     background-color: white;
     width: 270px;
-    margin: 0 auto;
+}
+
+.beginbtn.small {
+    width: 130px;
+    margin: 0 5px;
+    display: inline-block;
+}
+
+.otherbtn {
+    padding: 15px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    background-color: white;
+    width: 130px;
+    margin: 0 5px;
+    display: inline-block;
+}
+
+.deletar {
+    width: 30px;
+    height: 30px;
+    padding: 0 !important;
+    font-size: 14px;
+    border: none;
+    border-radius: 50% !important;
+    cursor: pointer;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1;
 }
 
 #taskinput {
@@ -79,7 +164,6 @@
     text-align:left;
 }
 
-
 .task {
   display: flex;
   justify-content: space-between;
@@ -88,8 +172,13 @@
   padding: 12px 16px;
   border-radius: 12px;
   margin-bottom: 12px;
-  cursor: pointer;
+  cursor: default;
   user-select: none;
+  pointer-events: none;
+}
+
+.task .deletar {
+  pointer-events: auto;
 }
 
 .task input {
