@@ -13,36 +13,6 @@
     
 }
 
-/* Estilo do calendário */
-.calendar table {
-
-    width: 100%;
-    table-layout: fixed;
-
-}
-
-.calendar th,
-.calendar td {
-
-    aspect-ratio: 1 / 1;
-    vertical-align: middle;
-    text-align: center;
-
-}
-
-.calendar th {
-
-    background-color: #0d6efd;
-    color: white;
-
-}
-
-.calendar td {
-
-    border: 1px solid #dee2e6;
-
-}
-
 /* Containers combinando */
 .calendar, .event-form {
 
@@ -85,53 +55,36 @@
 
 }
 
-/* Define uma altura mínima e alinhamento para as células do calendário */
-.calendar tbody td {
+/* --- ESTILOS FULLCALENDAR PARA CENTRALIZAÇÃO E CÉLULAS QUADRADAS --- */
 
-    height: 100px;
-    vertical-align: top;
-    padding: 5px;
-
-}
-
-/* Estilo para cada marcador de evento */
-.event-marker {
-
-    font-size: 0.85rem;
-    padding: 3px 5px;
-    background-color: #e3f2fd; /* Cor azul clara (Bootstrap) */
-    border: 1px solid #bde0fe;
-    border-radius: 5px;
-    margin-bottom: 4px;
-    
-    /* Usa Flexbox para alinhar nome e botões */
+/* Centraliza o conteúdo dentro da célula, incluindo o número do dia */
+.fc-daygrid-day-frame {
+    text-align: center;
+    /* Esta é a regra principal para forçar o formato quadrado */
+    aspect-ratio: 1 / 1; 
+    /* Define uma altura mínima que você achar razoável */
+    min-height: 100px; 
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-
+    flex-direction: column;
 }
 
-/* Garante que o nome do evento não quebre os botões */
-.event-name {
+/* Centraliza o título do evento */
+.fc-event-title-container {
+    text-align: center;
+}
 
+/* Garante que o número do dia fique no canto superior direito */
+.fc-daygrid-day-number {
+    width: 100%;
+    text-align: right; 
+    padding: 2px 4px;
+}
+
+/* Garante que os eventos ocupem o espaço inferior da célula */
+.fc-daygrid-day-content {
     flex-grow: 1;
-    /* Evita que o texto saia do container */
-    word-break: break-word;
-    margin-right: 5px;
-
-}
-
-/* Container para os botões */
-.event-buttons {
-
-    /* Impede que os botões quebrem linha */
-    white-space: nowrap;
-
-}
-
-/* Pequeno ajuste nos botões */
-.event-buttons .btn {
-
-    line-height: 1; /* Alinha melhor os ícones de texto */
-    
+    overflow-y: auto; /* Adiciona barra de rolagem se houver muitos eventos */
+    /* Garante que o número do dia fique no topo e os eventos fiquem embaixo */
+    display: flex;
+    flex-direction: column;
 }

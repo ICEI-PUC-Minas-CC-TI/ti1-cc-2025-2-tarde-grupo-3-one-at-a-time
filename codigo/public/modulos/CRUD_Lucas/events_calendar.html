@@ -5,10 +5,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="styles_events_calendar.css">
+    
+    <link href='https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.11/main.css' rel='stylesheet' /> 
+
     <title>Calendário de Eventos</title>
 </head>
 
@@ -23,25 +25,37 @@
     </header>
 
     <main>
+
         <div class="container">
             <div class="row justify-content-center align-items-start g-4">
                 <div class="col-md-8">
                     <div class="calendar bg-white rounded shadow p-4">
-                        <h4 class="text-center mb-3">Outubro 2025</h4>
-                        <table class="table table-bordered text-center mb-0">
-                            <thead class="table-secondary">
-                            <tr>
-                                <th>Dom</th><th>Seg</th><th>Ter</th><th>Qua</th><th>Qui</th><th>Sex</th><th>Sáb</th>
-                            </tr>
-                            </thead>
-                                <tbody>
-                                <tr><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
-                                <tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr>
-                                <tr><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr>
-                                <tr><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td></tr>
-                                <tr><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td></td><td></td></tr>
-                            </tbody>
-                        </table>
+                        <div>
+                            <p class="text-muted"><strong>Selecione uma data</strong></p>
+                            <input type="date" id="gotoDate" class="rounded bg-white"> 
+                        </div>
+                        <h4 class="text-center mb-3">Calendário de Eventos</h4>
+                        
+                        <div id="fullcalendar" class="mb-0"></div> 
+                        
+                        <div id="eventDetailsPanel" class="rounded shadow-lg p-3 bg-white border" style="display: none; position: absolute; z-index: 1050; min-width: 280px;">
+                            <button id="closePanelBtn" type="button" class="btn-close float-end"></button>
+                            <h5><strong id="panelEventName"></strong></h5>
+                            <p class="mb-1"><small><strong>Data:</strong> <span id="panelEventDate"></span></small></p>
+                            <p class="mb-2"><small><strong>Tipo:</strong> <span id="panelEventType"></span></small></p>
+                            <p class="text-muted"><small id="panelEventDescription"></small></p>
+                            <hr class="my-2">
+                            <div class="d-flex justify-content-between">
+                                <button type="button" class="btn btn-sm btn-warning" id="panelEditButton">
+                                    <i class="bi bi-pencil-fill"></i> Editar Nome
+                                </button>
+                                <button type="button" class="btn btn-sm btn-danger" id="panelDeleteButton">
+                                    <i class="bi bi-x-lg"></i> Excluir
+                                </button>
+                            </div>
+                            <input type="hidden" id="panelEventId">
+                        </div>
+                        
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -52,6 +66,24 @@
                                 <label for="eventName" class="form-label">Nome do Evento</label>
                                 <input type="text" class="form-control" id="eventName" placeholder="Digite o nome do evento">
                             </div>
+                            
+                            <div class="mb-3">
+                                <label for="eventDescription" class="form-label">Descrição</label>
+                                <input type="text" class="form-control" id="eventDescription" placeholder="Detalhes do evento">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="eventType" class="form-label">Tipo</label>
+                                <select class="form-select" id="eventType">
+                                    <option value="indefinido" selected>Selecione o Tipo</option>
+                                    <option value="prova">Prova</option>
+                                    <option value="viagem">Viagem</option>
+                                    <option value="congresso">Congresso</option>
+                                    <option value="estudo">Estudo</option>
+                                    <option value="reuniao">Reunião</option>
+                                </select>
+                            </div>
+
                             <div class="mb-3">
                                 <label for="eventDate" class="form-label">Data</label>
                                 <input type="date" class="form-control" id="eventDate">
@@ -64,9 +96,13 @@
         </div>
     </main>
 
-    <footer class="bg-dark text-white text-center py-3 fixed-bottom">
+    <footer class="bg-dark text-white text-center py-3">
         <p class="mb-0">© 2025 One At Time. Todos os direitos reservados.</p>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js'></script> 
 
     <script src="app_events_calendar.js"></script>
 

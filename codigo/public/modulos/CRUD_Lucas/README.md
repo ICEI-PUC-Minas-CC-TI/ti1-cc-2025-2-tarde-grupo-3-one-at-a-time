@@ -34,5 +34,5 @@
 
 > ---
 >![Cadastro de Eventos do Calendário](image.png)
->#### Imagem de exemplo da página de cadastro de enventos
+>#### Imagem de exemplo da página de cadastro de enventos (v.1)
 > ---
