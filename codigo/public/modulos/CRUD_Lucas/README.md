@@ -1,7 +1,7 @@
 # One At Time - CRUD de Eventos
 
 > ---
-> ### Funcionalidade: CRUD - Cadastro de Eventos
+> ### Funcionalidade: CRUD - Cadastro de Eventos (NEW - Utilizando API: FullCalendar)
 > - Autor: <i>Lucas Santiago Pereira</i>
 > ---
 
@@ -14,10 +14,13 @@
 >### Função:
 > ---
 > - Escolher mensagem do evento
+> - (NEW) Escolher descrição do evento
+> - (NEW) Escolher tipo do evento
 > - Escolher data do evento
 > - Adicionar evento ao calendário
 > - Editar evento
 > - Excluir evento
+> - (NEW) Listar eventos por data
 > ---
 
 > ---
@@ -33,6 +36,9 @@
 > ---
 
 > ---
->![Cadastro de Eventos do Calendário](image.png)
 >#### Imagem de exemplo da página de cadastro de enventos (v.1)
+>![Cadastro de Eventos do Calendário](image.png)
+> ---
+>#### Imagem de exemplo da página de cadastro de enventos (v.2)
+>![Cadastro de Eventos do Calendário(NEW)](imagev2.png)
 > ---

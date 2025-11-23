@@ -8,9 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="styles_events_calendar.css">
-    
     <link href='https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.11/main.css' rel='stylesheet' /> 
-
     <title>Calendário de Eventos</title>
 </head>
 
@@ -26,19 +24,30 @@
 
     <main>
 
+        <!-- Estrutura do calendário-->
         <div class="container">
+
             <div class="row justify-content-center align-items-start g-4">
+
                 <div class="col-md-8">
+
                     <div class="calendar bg-white rounded shadow p-4">
+
                         <div>
+
                             <p class="text-muted"><strong>Selecione uma data</strong></p>
+
                             <input type="date" id="gotoDate" class="rounded bg-white"> 
+
                         </div>
+
                         <h4 class="text-center mb-3">Calendário de Eventos</h4>
                         
                         <div id="fullcalendar" class="mb-0"></div> 
                         
+                        <!-- Painel de detalhes dos eventos -->
                         <div id="eventDetailsPanel" class="rounded shadow-lg p-3 bg-white border" style="display: none; position: absolute; z-index: 1050; min-width: 280px;">
+                            
                             <button id="closePanelBtn" type="button" class="btn-close float-end"></button>
                             <h5><strong id="panelEventName"></strong></h5>
                             <p class="mb-1"><small><strong>Data:</strong> <span id="panelEventDate"></span></small></p>
@@ -46,22 +55,38 @@
                             <p class="text-muted"><small id="panelEventDescription"></small></p>
                             <hr class="my-2">
                             <div class="d-flex justify-content-between">
+
                                 <button type="button" class="btn btn-sm btn-warning" id="panelEditButton">
-                                    <i class="bi bi-pencil-fill"></i> Editar Nome
+
+                                    <i class="bi bi-pencil-fill"></i> Editar
+
                                 </button>
+
                                 <button type="button" class="btn btn-sm btn-danger" id="panelDeleteButton">
+
                                     <i class="bi bi-x-lg"></i> Excluir
+
                                 </button>
+
                             </div>
+
                             <input type="hidden" id="panelEventId">
+
                         </div>
-                        
+
                     </div>
+
                 </div>
+
                 <div class="col-md-4">
+
+                    <!-- Formulário para adicionar os eventos -->
                     <div class="event-form bg-white rounded shadow p-4">
+
                         <h4 class="mb-4 text-center">Adicionar Evento</h4>
+
                         <form>
+
                             <div class="mb-3">
                                 <label for="eventName" class="form-label">Nome do Evento</label>
                                 <input type="text" class="form-control" id="eventName" placeholder="Digite o nome do evento">
@@ -88,16 +113,37 @@
                                 <label for="eventDate" class="form-label">Data</label>
                                 <input type="date" class="form-control" id="eventDate">
                             </div>
+
                             <button type="submit" class="btn btn-success w-100">Adicionar</button>
+
                         </form>
+
                     </div>
+
+                    <!-- Lista de eventos -->
+                    <div class="event-list-container mt-4 bg-white rounded shadow p-4">
+
+                        <h5 class="text-center mb-3 text-primary">Próximos Eventos</h5>
+                        <ul class="list-group" id="eventList">
+
+                            <li class="list-group-item text-muted">Carregando eventos...</li>
+
+                        </ul>
+
+                    </div>
+
                 </div>
+
             </div>
+
         </div>
+        
     </main>
 
     <footer class="bg-dark text-white text-center py-3">
+
         <p class="mb-0">© 2025 One At Time. Todos os direitos reservados.</p>
+
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
