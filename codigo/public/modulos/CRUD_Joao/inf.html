@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Pomodoro</title>
+</head>
+
+<body>
+    <div class="card cardone">
+        <button id="historybtn" onclick="window.location.href='pomodoro.html'">Pomodoro</button>
+        <div class="pombutt">
+            <h4>Tipo</h4>
+            <label><input type="radio" name="type-mode" value="all" checked><span>Todos</span></label>
+            <label><input type="radio" name="type-mode" value="pomodoro"><span>Pomodoro</span></label>
+            <label><input type="radio" name="type-mode" value="shortBreak"><span>Short Break</span></label>
+            <label><input type="radio" name="type-mode" value="longBreak"><span>Long Break</span></label>
+            <h4>Ordenar por</h4>
+            <label><input type="radio" name="sort-mode" value="recent" checked><span>Recente</span></label>
+            <label><input type="radio" name="sort-mode" value="duration"><span>Duração</span></label>
+            <label><input type="radio" name="sort-mode" value="type"><span>Tipo</span></label>
+        </div>
+        <input style="display: none;" type="number" class="timer" placeholder="25:00" min="1" max="60" step="1">
+        <h1 id="timer" style="display: none;">25:00</h1>
+        <div class="button-container">
+            <button type="button" id="begin" class="beginbtn" style="display: none;">Comece</button>
+            <button type="button" id="pause" class="otherbtn" style="display: none;">Pausar</button>
+            <button type="button" id="cancel" class="otherbtn" style="display: none;">Cancelar</button>
+        </div>
+    </div>
+
+    <div class="card tarefas">
+        <label class="task" id="history1">
+            <span class="timer-length">25:00</span>
+            <span class="timer-type">Pomodoro</span>
+            <button class="deletar btn btn-danger"><i class="bi bi-trash"></i></button>
+        </label>
+        <label class="task" id="history2">
+            <span class="timer-length">25:00</span>
+            <span class="timer-type">Pomodoro</span>
+            <button class="deletar btn btn-danger"><i class="bi bi-trash"></i></button>
+        </label>
+        <label class="task" id="history3">
+            <span class="timer-length">25:00</span>
+            <span class="timer-type">Pomodoro</span>
+            <button class="deletar btn btn-danger"><i class="bi bi-trash"></i></button>
+        </label>
+        <label class="task" id="history4">
+            <span class="timer-length">25:00</span>
+            <span class="timer-type">Pomodoro</span>
+            <button class="deletar btn btn-danger"><i class="bi bi-trash"></i></button>
+        </label>
+        <label class="task" id="history5">
+            <span class="timer-length">25:00</span>
+            <span class="timer-type">Pomodoro</span>
+            <button class="deletar btn btn-danger"><i class="bi bi-trash"></i></button>
+        </label>
+        <label class="task" id="history6">
+            <span class="timer-length">25:00</span>
+            <span class="timer-type">Pomodoro</span>
+            <button class="deletar btn btn-danger"><i class="bi bi-trash"></i></button>
+        </label>
+        <label class="task" id="history7">
+            <span class="timer-length">25:00</span>
+            <span class="timer-type">Pomodoro</span>
+            <button class="deletar btn btn-danger"><i class="bi bi-trash"></i></button>
+        </label>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous">
+</script>
+<script src="inf.js"></script>
+
+</html>

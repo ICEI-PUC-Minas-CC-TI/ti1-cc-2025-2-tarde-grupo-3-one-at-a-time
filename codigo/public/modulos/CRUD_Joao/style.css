@@ -9,6 +9,17 @@
     background-color: #e2e2e2 !important;
 }
 
+.cardtwo {
+    width: 400px;
+    margin: auto;
+    margin-top: 50px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 25px !important;
+    text-align: center;
+    background-color: #e2e2e2 !important;
+}
+
 .tarefas {
     width: 400px;
     margin: auto;
@@ -17,6 +28,12 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 25px !important;
     background-color: #e2e2e2 !important;
+    overflow-y: auto;
+}
+
+.dropdowns {
+    width: 400px;
+    
 }
 
 #timer {
@@ -99,9 +116,9 @@
 }
 
 .pombutt input[type="radio"]:checked + span {
-    background-color: #000000;
+    background-color: #3854F5;
     color: white;
-    border-color: #000000;
+    border-color: #3854F5;
 }
 
 .button-container {
@@ -123,6 +140,14 @@
     width: 130px;
     margin: 0 5px;
     display: inline-block;
+}
+
+#historybtn {
+    justify-content: center;
+    background: white;
+    padding: 12px 16px;
+    border-radius: 12px;
+    margin-bottom: 12px;
 }
 
 .otherbtn {
@@ -188,6 +213,10 @@
   display: none;
 }
 
+.space {
+    cursor: none;
+}
+
 .checkmark {
   width: 28px;
   height: 28px;
@@ -203,7 +232,7 @@
 
 @media (min-width: 600px) {
   body {
-    transform: scale(1.5);
-    margin-top: 200px !important;
+    transform: scale(2);
+    margin-top: 600px !important;
   }
 }

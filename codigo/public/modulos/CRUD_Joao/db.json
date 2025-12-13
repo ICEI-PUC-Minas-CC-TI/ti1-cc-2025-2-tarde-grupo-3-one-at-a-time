@@ -1,21 +1,21 @@
 {
   "usuarios": [
     {
-      "id": 1,
+      "id": "1",
       "login": "admin",
       "senha": "123",
       "nome": "Administrador do Sistema",
       "email": "admin@abc.com"
     },
     {
-      "id": 2,
+      "id": "2",
       "login": "user",
       "senha": "123",
       "nome": "Usuario Comum",
       "email": "user@abc.com"
     },
     {
-      "id": 3,
+      "id": "3",
       "login": "rommel",
       "senha": "123",
       "nome": "Rommel",
@@ -24,7 +24,7 @@
   ],
   "tarefas": [
     {
-      "id": 1,
+      "id": "1",
       "usuarioID": 2,
       "nome": "tarefa 1",
       "descricao": "essa é a primeira tarefa do usuario 2",
@@ -33,7 +33,7 @@
       "feito": true
     },
     {
-      "id": 2,
+      "id": "2",
       "usuarioID": 3,
       "nome": "tarefa 2",
       "descricao": "essa é a primeira tarefa do usuario 3",
@@ -42,7 +42,7 @@
       "feito": true
     },
     {
-      "id": 3,
+      "id": "3",
       "usuarioID": 2,
       "nome": "tarefa 3",
       "descricao": "essa é a segunda tarefa do usuario 2",
@@ -53,7 +53,7 @@
   ],
   "eventos": [
     {
-      "id": 1,
+      "id": "1",
       "usuarioID": 2,
       "nome": "evento 1",
       "descricao": "essa é o primeiro evento do usuario 2",
@@ -61,7 +61,7 @@
       "data": "18/11/2025"
     },
     {
-      "id": 2,
+      "id": "2",
       "usuarioID": 3,
       "nome": "evento 2",
       "descricao": "essa é o primeiro evento do usuario 3",
@@ -69,7 +69,7 @@
       "data": "01/01/2026"
     },
     {
-      "id": 3,
+      "id": "3",
       "usuarioID": 2,
       "nome": "evento 3",
       "descricao": "essa é o segundo evento do usuario 2",
@@ -79,86 +79,76 @@
   ],
   "timer": [
     {
-      "id": 1,
-      "usuarioID": 2,
-      "nome": "timer 1",
-      "tipo": "estudo",
-      "duracao": 15,
-      "intervalo": 5,
-      "repeticao": 3
-    },
-    {
-      "id": 2,
-      "usuarioID": 3,
-      "nome": "timer 2",
-      "tipo": "estudo",
-      "duracao": 30,
-      "intervalo": 15,
-      "repeticao": 5
-    },
-    {
-      "id": 3,
-      "usuarioID": 2,
-      "nome": "timer 3",
-      "tipo": "exercicio",
-      "duracao": 15,
-      "intervalo": 10,
-      "repeticao": 3
-    },
-    {
-      "id": 4,
+      "id": 18,
       "mode": "pomodoro",
-      "duration": 25
+      "duration": 1,
+      "timestamp": "23/11/2025 15:46:28"
     },
     {
-      "id": 5,
+      "id": 19,
       "mode": "shortBreak",
-      "duration": 5
+      "duration": 5,
+      "timestamp": "23/11/2025 15:47:35"
     },
     {
-      "id": 6,
+      "id": 20,
+      "mode": "pomodoro",
+      "duration": 25,
+      "timestamp": "23/11/2025 15:52:40"
+    },
+    {
+      "id": 21,
+      "mode": "shortBreak",
+      "duration": 5,
+      "timestamp": "23/11/2025 16:17:45"
+    },
+    {
+      "id": 22,
+      "mode": "pomodoro",
+      "duration": 25,
+      "timestamp": "23/11/2025 16:22:50"
+    },
+    {
+      "id": 23,
       "mode": "longBreak",
-      "duration": 15
+      "duration": 15,
+      "timestamp": "23/11/2025 16:47:55"
     },
     {
-      "id": 7,
+      "id": 24,
       "mode": "pomodoro",
-      "duration": 25
+      "duration": 25,
+      "timestamp": "23/11/2025 17:03:00"
     },
     {
-      "id": 8,
-      "mode": "pomodoro",
-      "duration": 25
-    },
-    {
-      "id": 9,
-      "mode": "pomodoro",
-      "duration": 25
-    },
-    {
-      "id": 10,
+      "id": 25,
       "mode": "shortBreak",
-      "duration": 0
+      "duration": 5,
+      "timestamp": "23/11/2025 17:28:05"
     },
     {
-      "id": 11,
+      "id": 26,
       "mode": "pomodoro",
-      "duration": 0
+      "duration": 25,
+      "timestamp": "23/11/2025 17:33:10"
     },
     {
-      "id": 12,
+      "id": 27,
+      "mode": "shortBreak",
+      "duration": 5,
+      "timestamp": "23/11/2025 17:58:15"
+    },
+    {
+      "id": 28,
       "mode": "pomodoro",
-      "duration": 1
+      "duration": 25,
+      "timestamp": "23/11/2025 18:03:20"
     },
     {
-      "id": 13,
+      "id": 29,
       "mode": "longBreak",
-      "duration": 20
-    },
-    {
-      "id": 14,
-      "mode": "shortBreak",
-      "duration": 10
+      "duration": 15,
+      "timestamp": "23/11/2025 18:28:25"
     }
   ]
 }

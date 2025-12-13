@@ -160,6 +160,7 @@ function saveTimerHistory(mode, duration) {
         });
         
         const newId = maxId + 1;
+        const now = new Date();
         
         return fetch(TIMER_URL, {
             method: 'POST',
@@ -170,6 +171,7 @@ function saveTimerHistory(mode, duration) {
                 id: newId,
                 mode: mode,
                 duration: duration,
+                timestamp: now.toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' })
             })
         });
     })
@@ -179,16 +181,32 @@ function saveTimerHistory(mode, duration) {
             return;
         }
         console.log('Histórico do timer salvo com sucesso.');
-        return response.json();
+        setTimeout(() => {
+            location.reload();
+        }, 2000);
     })
     .catch(error => {
         console.error('Erro na requisição:', error);
     });
 }
 
-let history = document.getElementById('history1');
-let history2 = document.getElementById('history2');
-let history3 = document.getElementById('history3');
+async function deleteTimer(id) {
+    try {
+        const res = await fetch(`${TIMER_URL}/${id}`, { method: 'DELETE' });
+        if (!res.ok) {
+            console.log('Erro ao deletar o timer.');
+            return;
+        }
+        console.log('Timer deletado com sucesso.');
+        displayTimerHistory();
+    } catch (error) {
+        console.error('Erro na requisição:', error);
+    }
+}
+
+let history1El = document.getElementById('history1');
+let history2El = document.getElementById('history2');
+let history3El = document.getElementById('history3');
 
 function displayTimerHistory() {
     fetch(TIMER_URL)
@@ -198,10 +216,10 @@ function displayTimerHistory() {
         
         if (recentTimers[0]) {
             const timer = recentTimers[0];
-            history.innerHTML = `
+            history1El.innerHTML = `
                 <span class="timer-length">${timer.duration} min</span>
                 <span class="timer-type">${timer.mode}</span>
-                <button class="deletar btn btn-danger" onclick="deleteTimer(${timer.id})">
+                <button class="deletar btn btn-danger" data-id="${timer.id}">
                     <i class="bi bi-trash"></i>
                 </button>
             `;
@@ -209,28 +227,28 @@ function displayTimerHistory() {
         
         if (recentTimers[1]) {
             const timer = recentTimers[1];
-            history2.innerHTML = `
+            history2El.innerHTML = `
                 <span class="timer-length">${timer.duration} min</span>
                 <span class="timer-type">${timer.mode}</span>
-                <button class="deletar btn btn-danger" onclick="deleteTimer(${timer.id})">
+                <button class="deletar btn btn-danger" data-id="${timer.id}">
                     <i class="bi bi-trash"></i>
                 </button>
             `;
         } else {
-            history2.style.display = 'none';
+            history2El.style.display = 'none';
         }
         
         if (recentTimers[2]) {
             const timer = recentTimers[2];
-            history3.innerHTML = `
+            history3El.innerHTML = `
                 <span class="timer-length">${timer.duration} min</span>
                 <span class="timer-type">${timer.mode}</span>
-                <button class="deletar btn btn-danger" onclick="deleteTimer(${timer.id})">
+                <button class="deletar btn btn-danger" data-id="${timer.id}">
                     <i class="bi bi-trash"></i>
                 </button>
             `;
         } else {
-            history3.style.display = 'none';
+            history3El.style.display = 'none';
         }
     })
     .catch(error => {
@@ -238,4 +256,47 @@ function displayTimerHistory() {
     });
 }
 
-displayTimerHistory();
+document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.deletar');
+    if (!btn) return;
+    
+    e.preventDefault();
+    e.stopPropagation();
+    
+    const rawId = btn.getAttribute('data-id');
+    console.log('delete click, raw data-id:', rawId);
+    const id = parseInt(rawId, 10);
+    if (isNaN(id)) {
+        console.warn('invalid id for delete:', rawId);
+        return;
+    }
+    deleteTimer(id);
+});
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', displayTimerHistory);
+} else {
+    displayTimerHistory();
+}
+
+function addTask(mode, description, duration, timestamp) {
+    const taskEl = document.createElement('div');
+    taskEl.classList.add('tarefa');
+
+    const span = (cls, text) => {
+        const s = document.createElement('span');
+        s.className = cls;
+        s.textContent = text;
+        return s;
+    };
+
+    taskEl.appendChild(span('task-mode', mode));
+    taskEl.appendChild(span('task-desc', description));
+    taskEl.appendChild(span('task-duration', `${duration} min`));
+    taskEl.appendChild(span('task-timestamp', timestamp));
+
+    if (taskContainer && taskContainer.appendChild) {
+        taskContainer.appendChild(taskEl);
+    }
+}
+
