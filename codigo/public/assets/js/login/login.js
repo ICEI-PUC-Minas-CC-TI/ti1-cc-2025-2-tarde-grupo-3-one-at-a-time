@@ -11,12 +11,17 @@
 
 
 // Página inicial de Login
-const LOGIN_URL = "/modulos/login/login.html";
-let RETURN_URL = "/modulos/login/index.html";
+const LOGIN_URL = "./modulos/login/login.html";
+let RETURN_URL = "./modulos/login/index.html";
 const API_URL = '/usuarios';
 
 // Objeto para o banco de dados de usuários baseado em JSON
 var db_usuarios = {};
+
+// Objetos para as coleções do usuário corrente
+var db_tarefas = {};
+var db_eventos = {};
+var db_timer = {};
 
 // Objeto para o usuário corrente
 var usuarioCorrente = {};
@@ -67,6 +72,53 @@ function carregarUsuarios(callback) {
         displayMessage("Erro ao ler usuários");
     });
 }
+
+// Função genérica para carregar coleções filtradas por usuarioID
+function carregarColecao(endpoint, usuarioID, callback) {
+    // Constrói a URL para a API do JSON Server com filtro de usuarioID
+    const url = `${endpoint}?usuarioID=${usuarioID}`;
+
+    fetch(url)
+    .then(response => response.json())
+    .then(data => {
+        // Usa o endpoint para decidir qual variável global atualizar
+        if (endpoint === '/tarefas') {
+            db_tarefas = data;
+        } else if (endpoint === '/eventos') {
+            db_eventos = data;
+        } else if (endpoint === '/timer') {
+            db_timer = data;
+        }
+        console.log(`${endpoint} carregados para o usuário ${usuarioID}:`, data);
+        if (callback) {
+            callback();
+        }
+    })
+    .catch(error => {
+        console.error(`Erro ao ler ${endpoint} via API JSONServer:`, error);
+        displayMessage(`Erro ao ler ${endpoint}`);
+    });
+}
+
+// Funções específicas para carregar cada tipo de item do usuário logado
+function carregarTarefas(callback) {
+    if (usuarioCorrente.id) {
+        carregarColecao('/tarefas', usuarioCorrente.id, callback);
+    }
+}
+
+function carregarEventos(callback) {
+    if (usuarioCorrente.id) {
+        carregarColecao('/eventos', usuarioCorrente.id, callback);
+    }
+}
+
+function carregarTimer(callback) {
+    if (usuarioCorrente.id) {
+        carregarColecao('/timer', usuarioCorrente.id, callback);
+    }
+}
+
 
 // Verifica se o login do usuário está ok e, se positivo, direciona para a página inicial
 function loginUser (login, senha) {

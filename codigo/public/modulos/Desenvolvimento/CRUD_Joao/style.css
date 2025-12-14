@@ -1,0 +1,39 @@
+/* ================================================= */
+/* CUSTOM_BOOTSTRAP.CSS                              */
+/* Carregue este arquivo DEPOIS do bootstrap.min.css */
+/* ================================================= */
+
+:root {
+    /* Define a cor principal do projeto para acentuação */
+    --bs-primary: #007bff; 
+    --bs-light: #f8f9fa;
+    --bs-body-color: #343a40; /* Texto escuro */
+}
+
+/* 1. Estilos Globais Mínimos */
+body {
+    /* Fundo branco-suave para combinar com o tema claro do Bootstrap */
+    background-color: var(--bs-light);
+    /* Define uma fonte moderna e limpa */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 2. Sobrescritas para Cards e Elementos Principais */
+
+/* Aumenta a proeminência de cards e boxes (como o Jumbotron/Hero do index.html) */
+.card, .shadow, .bg-white {
+    transition: all 0.2s ease-in-out;
+}
+
+/* 3. Estilos Específicos para Funcionalidades */
+
+/* Timer/Pomodoro: Acentuação nos botões de modo */
+.pombutt input:checked + span {
+    background-color: var(--bs-primary) !important;
+    color: white !important;
+}
+
+/* Apenas para garantir que o texto do timer se destaque */
+#timer {
+    font-weight: 700;
+}

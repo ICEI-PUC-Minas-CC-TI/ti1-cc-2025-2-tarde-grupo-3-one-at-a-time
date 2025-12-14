@@ -1,56 +1,173 @@
-@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"); 
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+/* ================================================= */
+/* 1. RESET E VARIAVEIS GLOBAIS                      */
+/* ================================================= */
+:root {
+    /* Cores Primárias */
+    --primary: #007bff; /* Azul padrão do Bootstrap */
+    --secondary: #6c757d; /* Cinza secundário */
+    --success: #28a745;
+    --warning: #ffc107;
+    --danger: #dc3545;
 
-h3 {
-    color: #093070;
-    border-bottom: 1px solid #c1c1c1;
-}
-h4 {
-    color: #ff7645;
-}
-
-.banner img {
-    width: 100%;
+    /* Tons de Azul Personalizados */
+    --blue-dark: #004d99;
+    --blue-light: #e6f0ff; /* Fundo levemente azulado */
+    
+    /* Tons de Branco/Cinza */
+    --white: #ffffff;
+    --off-white: #f8f9fa; /* Fundo da body */
+    --light-grey: #e9ecef;
 }
 
-.barra-info {
-    height: 2em;
-    background-color: #f0f0f0;
+body {
+    background-color: var(--off-white);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #343a40; /* Texto escuro */
+}
+
+/* ================================================= */
+/* 2. NAVBAR E HEADER (Reforço do Azul Primário)     */
+/* ================================================= */
+.navbar {
+    background-color: var(--primary) !important;
+}
+
+.navbar-brand, .navbar-text, .btn-outline-light {
+    color: var(--white) !important;
+}
+
+/* ================================================= */
+/* 3. CARDES E CONTÊINERES (Layout Base)             */
+/* ================================================= */
+.card, .p-5.bg-white.rounded-3.shadow, .event-form, .calendar, .form-section {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: var(--white);
+}
+
+.card:hover, .task-card:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    transform: translateY(-2px);
+}
+
+/* Títulos principais dentro dos containers */
+h1, h2, h3 {
+    color: var(--blue-dark);
+}
+
+/* ================================================= */
+/* 4. ESTILOS ESPECÍFICOS PARA FUNCIONALIDADES       */
+/* ================================================= */
+
+/* --- A) Tarefas (tasks.html e index_cards.html) --- */
+
+/* Cards View */
+.task-card {
+    border-left: 5px solid;
+    padding: 15px;
+}
+
+.task-card.ALTA {
+    border-color: var(--danger);
+    background-color: #fcebeb; /* Fundo levemente rosa */
+}
+.task-card.MEDIA {
+    border-color: var(--warning);
+    background-color: #fff8e6; /* Fundo levemente amarelo */
+}
+.task-card.BAIXA {
+    border-color: var(--success);
+    background-color: #e6fae9; /* Fundo levemente verde */
+}
+
+.task-card.completed {
+    opacity: 0.7;
+    text-decoration: line-through;
+    color: var(--secondary);
+}
+
+/* Lista de Tarefas (CRUD) */
+#taskList li {
+    border: 1px solid var(--light-grey);
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+/* --- B) Calendário de Eventos --- */
+
+/* Estilo para o formulário de evento */
+.event-form {
+    border: 1px solid var(--blue-light);
+    background-color: var(--blue-light);
+}
+
+/* Estilo para a célula do calendário (para harmonizar) */
+.fc-daygrid-day-frame {
+    background-color: var(--white);
+    border: 1px solid var(--light-grey);
+    border-radius: 4px;
+    margin: 1px;
+}
+
+/* --- C) Pomodoro e Histórico --- */
+.cardone {
+    background-color: var(--white);
+    text-align: center;
+    padding: 30px;
+}
+
+.pombutt label span {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 20px;
+    background-color: var(--light-grey);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.pombutt input:checked + span {
+    background-color: var(--primary);
+    color: var(--white);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Esconde os radio buttons originais */
+.pombutt input[type="radio"] {
+    display: none;
+}
+
+/* Estilo para o display do timer */
+#timer {
+    font-size: 5rem;
+    color: var(--blue-dark);
+    margin: 20px 0;
+}
+
+/* Histórico de Timers */
+.tarefas .task {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid var(--light-grey);
+    margin-bottom: 5px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+    background-color: var(--white);
 }
 
-.menu ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+.tarefas .task:hover {
+    background-color: var(--blue-light);
 }
 
-.menu li {
-    display: inline;
-    margin: 0px;
-    padding: 0.5em 1em; 
-    height: 2em;
-    line-height: 2em;
-}
-
-.menu li a {
-    text-decoration: none;
-    color: #ff7645;
+.timer-length {
     font-weight: bold;
+    color: var(--blue-dark);
 }
 
-.menu li:hover {
-    background-color: darkblue;
-    color: white;
-}
-
-.dados-usuario {
-    height: 2em;
-    line-height: 2em;
-    margin-right: 20px;
-}
-
-main {
-    padding: 20px;
+.deletar {
+    background: none;
+    border: none;
+    color: var(--danger);
 }

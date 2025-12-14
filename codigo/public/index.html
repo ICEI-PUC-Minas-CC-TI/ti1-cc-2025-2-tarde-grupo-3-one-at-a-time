@@ -1,78 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <script src="./assets/js/login.js"></script>
-  </head>
-  <body>
-    <header>
-      <div class="banner">
-        <img src="./assets/images/banner_ti.png" alt="" />
-      </div>
-      <div class="barra-info">
-        <nav class="menu">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">Sobre nós</a></li>
-          </ul>
-        </nav>
-        <div class="dados-usuario">
-          <span id="userInfo"></span>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - One At a Time</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-cubes me-2"></i> One At a Time
+            </a>
+            <div class="d-flex" id="navbar-links">
+                
+                <div id="logged-in-links" class="d-none">
+                    <span id="welcome-message" class="navbar-text me-3 text-white"></span>
+                    <button id="btn-logout" class="btn btn-outline-light">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </button>
+                    
+                </div>
+
+                <div id="logged-out-links" class="d-none">
+                    <a href="about-us.html" class="btn btn-outline-light me-2">
+                        <i class="fas fa-info-circle"></i> Sobre Nós
+                    </a>
+                    <a href="./modulos/Final/login/login.html" class="btn btn-outline-light me-2">
+                        <i class="fas fa-sign-in-alt"></i> Login
+                    </a>
+                    <a href="./modulos/Final/login/cadastro_usuario.html" class="btn btn-light">
+                        <i class="fas fa-user-plus"></i> Cadastro
+                    </a>
+                </div>
+                
+
+            </div>
         </div>
-      </div>
-    </header>
-    <main>
-        <h3>Boas vindas</h3>
-        <p>Sejam bem-vindos à home-page do projeto de TI 1 - Trabalho
-        Interdisciplinar</p>
-        <p>Esse conteúdo que você está lendo foi criado para exemplificar como
-        criar o seu site integrado com o ambiente de login e o back end que
-        utiliza o JSON Server.</p>
-        <p>Ao criar o seu site, você deve adaptar esse código para sua neessidade ou começar do zero, excluindo todo esse conteúdo.
-        </p>
+    </nav>
 
-        <h3>Arquivos do site (Front End)</h3>
-        <p>Para montar seu site, edite os arquivos existentes e crie novos arquivos na pasta <code>public</code> que mantem todos os arquivos da parte de Front End do site, a interface que é vista pelo usuário no navegador.</p>
+    <div class="container mt-5">
+        <div class="p-5 mb-4 bg-white rounded-3 shadow">
+            <div class="container-fluid py-5 text-center">
+                <h1 class="display-5 fw-bold">Bem-vindo(a) ao One At a Time</h1>
+                
+                <div id="logged-in-content" class="d-none mt-5">
+                    
+                    <p class="fs-4 mb-4">
+                        Acesse suas ferramentas de produtividade. Você está logado como: <strong id="logged-user-name"></strong>
+                    </p>
 
-        <p>Nesta pasta <code>public</code>, sugerimos que você organize os arquivos do seu site da seguinte maneira:</p>
-        <ul>
-            <li><strong>Pasta <code>assets</code></strong>: os arquivos de formatação (CSS), os scripts (JS), as imagens utilizadas no site (JPG, PNG, GIF, SVG, etc), fontes (TTF) e outros arquivos gerais utilizados por todo o site.</li>
-            <li><strong>Pasta <code>modulos</code></strong>: os arquivos utilizados na implementação das funcionalidades do site. Separe uma sub-pasta para cada novo módulo ou funcionalidade. Pode também ser utilizado para dividir o trabalho de cada membro do grupo.</li>
-            <li><strong>Arquivo <code>index.html</code></strong>: arquivo que representa a "home page" do site.</li>
-        </ul>
+                    <div class="row align-items-center">
+                        
+                        <div class="col-md-6 text-start ps-5">
+                            <h2 class="display-5 fw-light text-primary" style="line-height: 1.4;">
+                                Tudo que você<br>
+                                estudante precisa <br>
+                                para organizar <br>
+                                suas tarefas em <br>
+                                um só lugar!
+                            </h2>
+                        </div>
 
-        <h3>Módulo de Login</h3>
-        <p>O módulo de login de usuário traz uma funcionalidade completa de registro de usuários e validação de login e senha.</p>
-        <h4>Integração do site com módulo de Login</h4>
-        <p>Para utilizar o módulo de login, basta incluir o script na sua página colocando a seguinte tag no HEAD</p>
-        <pre>&lt;script src="./assets/js/login.js"&gt&lt;script&gt;</pre>
-        <p>Ao incluir o script de login na sua página, caso o usuário ainda não tenha efetuado login, ao acessar a home-page do site, o navegador será direcionado para o formulário de <strong>Identificação de Usuário</strong>. Se o usuário informar corretamente o login e a senha, o navegador será direcionado para a Home-Page.</p>
-        <h4>Sessão do usuário logado</h4>
-        <p>Assim que o usuário se identifica e acessa a parte privada do site, o módulo de login cria uma chave do sessionStorage do navegador com o título <strong>usuarioCorrente</strong> e cujo conteúdo é um objeto com os atributos: id, nome, login, senha e email. </p>
-        <h4>Base de dados de usuários</h4>
-        <p>Inicialmente o módulo de login é configurado com dois usuários: </p>
-        <ul>
-            <li>admin - Senha: 123</li>
-            <li>user - Senha: 123</li>
-        </ul>
+                        <div class="col-md-6 text-end">
+                            <div class="d-grid gap-3">
+                                <a href="./modulos/Final/tarefas/task.html" class="btn btn-success btn-lg">
+                                    <i class="fas fa-tasks"></i> Minhas Tarefas
+                                </a>
+                                <a href="./modulos/Final/eventos/events_calendar.html" class="btn btn-info btn-lg">
+                                    <i class="fas fa-calendar-alt"></i> Meus Eventos
+                                </a>
+                                <a href="./modulos/Final/pomodoro/pomodoro.html" class="btn btn-warning btn-lg">
+                                    <i class="fas fa-clock"></i> Meus Timers
+                                </a>
+                                <a href="./modulos/Final/pomodoro/inf.html" class="btn btn-secondary btn-lg">
+                                    <i class="fas fa-history"></i> Histórico de Timers
+                                </a>
+                                <a href="./modulos/Final/tarefas/index-cards.html" class="btn btn-secondary btn-lg">
+                                    <i class="fas fa-columns"></i> Cards View
+                                </a>
+                            </div>
+                        </div>
 
-        <h3>Servidor Web e API baseada no JSON Server (Back end)</h3>
-        <p>O ambiente de trabalho disponibilizado para suportar o Trabalho Interdisciplinar 1 é baseado no Node.js. A aplicação de back end utiliza o módulo JSON Server para criar um Servidor Web que prove duas estruturas separadas:
-        <ul>
-            <li><strong>Arquivos estáticos (Pasta <code>public</code>)</strong>: da acesso aos arquivos utilizados no front end (HTML, CSS e JavaScript).</li>
-            <li><strong>API RESTful (pasta <code>db</code>)</strong>: uma interface para acesso aos dados definidos no arquivo db.json.</li>
-        </ul></p>
+                    </div>
 
-        <h4>Arquitetura do site</h4>
-        <p>A imagem que se segue apresenta a arquitetura desse ambiente, mostrando as duas refletindo as pastas desse ambiente.</p>
-        <p><img class="img-fluid d-block w-75 m-auto" src="./assets/images/servidor.png" alt=""></p>
+                </div>
 
-        <h4>Arquivo db.json</h4>
-        <p>O arquivo JSON utilizado para definição das estruturas dos dados providos pela aplicação é localizado na pasta db e tem um formato como o mostrado no exemplo da figura a seguir. Esse arquivo define uma estrutura hipotética de contatos que descreve itens com os seguintes atributos: <code>id</code>, <code>nome</code> e <code>cidade</code>. para o JSON Server, é fundamental que toda estrutura tenha um atributo de identificador de nome <code>id</code>.</p>
-        <p><img class="img-fluid d-block w-50 m-auto" src="./assets/images/arquivo_json.png" alt=""></p>
-    </main>
-  </body>
+                <div id="logged-out-content" class="d-none mt-4">
+                    <p class="fs-4">Organize suas tarefas, eventos e tempo de estudo com nossa plataforma.</p>
+                    <a href="./modulos/Final/login/cadastro_usuario.html" class="btn btn-primary btn-lg mt-3">
+                        Comece Agora: Cadastre-se
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/login/auth.js"></script> 
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const user = getUsuarioLogado(); 
+            const loggedInLinks = document.getElementById('logged-in-links');
+            const loggedOutLinks = document.getElementById('logged-out-links');
+            const loggedInContent = document.getElementById('logged-in-content');
+            const loggedOutContent = document.getElementById('logged-out-content');
+
+            if (user) {
+                loggedInLinks.classList.remove('d-none');
+                loggedOutLinks.classList.add('d-none');
+                loggedInContent.classList.remove('d-none');
+                loggedOutContent.classList.add('d-none');
+                document.getElementById('welcome-message').innerText = `Olá, ${user.nome.split(' ')[0]}!`;
+                document.getElementById('logged-user-name').innerText = user.nome;
+
+                document.getElementById('btn-logout').addEventListener('click', () => {
+                    logout();
+                });
+
+            } else {
+                loggedInLinks.classList.add('d-none');
+                loggedOutLinks.classList.remove('d-none');
+                loggedInContent.classList.add('d-none');
+                loggedOutContent.classList.remove('d-none');
+            }
+        });
+    </script>
+</body>
+
 </html>

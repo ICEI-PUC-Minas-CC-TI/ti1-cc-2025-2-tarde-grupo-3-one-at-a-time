@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    
+    <link rel="stylesheet" href="styles_events_calendar.css"> <link rel="stylesheet" href="../../../assets/css/custom_bootstrap.css"> 
+    <link href='https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.11/main.css' rel='stylesheet' /> 
+    
+    <title>Calendário de Eventos</title>
+</head>
+
+<body class="bg-light">
+
+    <script src="../../../assets/js/login/auth.js"></script>
+    <script>
+        // REDIRECIONA SE NÃO ESTIVER LOGADO
+        if (!getUsuarioLogado()) {
+            window.location.href = '../../Final/login/login.html';
+        }
+    </script>
+    <script src="../../../assets/js/login/api.js"></script>
+
+    <header class="mb-5">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+            <div class="container-fluid">
+                <h1 class="navbar-brand h1 mb-0 text-white">
+                    <i class="fas fa-calendar-alt me-2"></i> DevHub - Eventos
+                </h1>
+                <a href="../../../index.html" class="btn btn-outline-light">Voltar para Home</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="row justify-content-center align-items-start g-4">
+
+                <div class="col-md-8">
+                    <div class="calendar card bg-white rounded shadow p-4 mb-5">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <p class="text-muted mb-0"><strong>Ir para a Data:</strong></p>
+                            <input type="date" id="gotoDate" class="form-control w-auto"> 
+                        </div>
+
+                        <h4 class="text-center mb-3 text-primary">Calendário de Eventos</h4>
+                        <div id="fullcalendar" class="mb-0"></div> 
+                        
+                        <div id="eventDetailsPanel" class="rounded shadow-lg p-3 bg-white border" style="display: none; position: absolute; z-index: 1050; min-width: 280px;">
+                            <button id="closePanelBtn" type="button" class="btn-close float-end"></button>
+                            <h5><strong id="panelEventName"></strong></h5>
+                            <p class="mb-1"><small><strong>Data:</strong> <span id="panelEventDate"></span></small></p>
+                            <p class="mb-2"><small><strong>Tipo:</strong> <span id="panelEventType"></span></small></p>
+                            <p class="text-muted"><small id="panelEventDescription"></small></p>
+                            <hr class="my-2">
+                            <div class="d-flex justify-content-between">
+                                <button type="button" class="btn btn-sm btn-warning" id="panelEditButton">
+                                    <i class="bi bi-pencil-fill"></i> Editar
+                                </button>
+                                <button type="button" class="btn btn-sm btn-danger" id="panelDeleteButton">
+                                    <i class="bi bi-x-lg"></i> Excluir
+                                </button>
+                            </div>
+                            <input type="hidden" id="panelEventId">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="event-form card shadow p-4 mb-4">
+                        <h4 class="mb-4 text-center text-primary">Adicionar Evento</h4>
+                        <form>
+                            <div class="mb-3">
+                                <label for="eventName" class="form-label">Nome do Evento</label>
+                                <input type="text" class="form-control" id="eventName" placeholder="Digite o nome do evento">
+                            </div>
+                            <div class="mb-3">
+                                <label for="eventDescription" class="form-label">Descrição</label>
+                                <input type="text" class="form-control" id="eventDescription" placeholder="Detalhes do evento">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="eventType" class="form-label">Tipo</label>
+                                <select class="form-select" id="eventType">
+                                    <option value="indefinido" selected>Selecione o Tipo</option>
+                                    <option value="prova">Prova</option>
+                                    <option value="viagem">Viagem</option>
+                                    <option value="congresso">Congresso</option>
+                                    <option value="estudo">Estudo</option>
+                                    <option value="reuniao">Reunião</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="eventDate" class="form-label">Data</label>
+                                <input type="date" class="form-control" id="eventDate">
+                            </div>
+                            <button type="submit" class="btn btn-success w-100">Adicionar</button>
+                        </form>
+                    </div>
+
+                    <div class="event-list-container card shadow p-4">
+                        <h5 class="text-center mb-3 text-secondary">Próximos Eventos</h5>
+                        <ul class="list-group list-group-flush" id="eventList">
+                            <li class="list-group-item text-muted">Carregando eventos...</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js'></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" integrity="sha512-..." crossorigin="anonymous"></script>
+    <script src="../../../assets/js/eventos/app_events_calendar.js"></script>
+
+</body>
+</html>
