@@ -230,9 +230,38 @@
   border-color: grey;
 }
 
-@media (min-width: 600px) {
-  body {
-    transform: scale(2);
-    margin-top: 600px !important;
-  }
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.main_text {
+    align-items: center;
+    display: flex;
+}
+
+.maintext {
+    font-size: 80px;
+}
+
+.cardbtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #d3d3d3;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.mainbtn {
+    background-color: #d3d3d3;
+    border: none;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 }
