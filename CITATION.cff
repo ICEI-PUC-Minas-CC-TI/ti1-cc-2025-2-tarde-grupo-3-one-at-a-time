@@ -3,29 +3,20 @@ message: Please cite this software using these metadata.
 title: One at a Time
 authors:
   - family-names: 
-    given-names: 
+    given-names: Fernando Valle Gusmão
   - family-names: 
-    given-names: 
+    given-names: Lucas Santiago Pereira
   - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names:
+    given-names: João Ricardo de Oliveira Bellesia
   - name-suffix: Professor
     affiliation: PUC Minas
     family-names: 
-    given-names: 
-  - name-suffix: Professor
-    affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    given-names: Luciana Mara Freitas Diniz
 keywords:
-  - 
-  - 
+  - Tasks
+  - Management
 repository-code: 
 license: CC-BY-4.0
 version: 1.0.0
 date-released: 2022-07-14
+
