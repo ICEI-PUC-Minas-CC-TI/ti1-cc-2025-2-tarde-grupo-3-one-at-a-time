@@ -7,8 +7,8 @@ Informações básicas do projeto.
 * **Membros da equipe:**
 
   * [Fernando Valle Gusmão](https://github.com/FVG!)
-  * [Beltrano](https://github.com/beltrano) ⚠️ EXEMPLO ⚠️
-  * [Cicrano](https://github.com/cicrano) ⚠️ EXEMPLO ⚠️
+  * [Lucas Santiago Pereira](https://github.com/jbellezia)
+  * [João Ricardo de Oliveira Bellesia](https://github.com/santiago-lucax)
 
 A documentação do projeto é estruturada da seguinte forma:
 
