@@ -89,4 +89,4 @@ Relação de ferramentas empregadas pelo grupo durante o projeto.
 | --------------------------- | ---------- | -------------------------------------------------- |
 | Processo de Design Thinking | Miro       | https://miro.com/app/board/uXjVJRw-XDY=/ ]     |
 | Repositório de código     | GitHub     | ]https://github.com/ICEI-PUC-Minas-CC-TI/ti1-cc-2025-2-tarde-grupo-3-one-at-a-time ]     |
-| Hospedagem do site          | GitHubpages     | https://site.render.com/XXXXXXX ] |
+| Hospedagem do site          | GitHubpages     | https://icei-puc-minas-cc-ti.github.io/ti1-cc-2025-2-tarde-grupo-3-one-at-a-time/ ] |
